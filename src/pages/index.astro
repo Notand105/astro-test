@@ -1,4 +1,12 @@
 ---
+
+const actividades = ['programar', 'ver series', 'escchar musica']
+let isActive = true
+
+function toggleActive () {
+	isActive = !isActive
+}
+
 ---
 
 <html lang="en">
@@ -10,6 +18,17 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<h1 class={isActive ? "active" : ""} >Hola universo</h1>
+
+		{actividades.map((e, i)=>{
+			return <h2 > {e}</h2>
+		})}
+		<button >change</button>
 	</body>
 </html>
+
+<style>
+	.active{
+		color: orange;
+	}
+</style>

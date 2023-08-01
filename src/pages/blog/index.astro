@@ -1,0 +1,21 @@
+---
+import Layout from "../../components/Layout.astro";
+const posts = await Astro.glob("./posts/*.md");
+---
+
+<Layout pagetitle="blog" pageDescription="pagina de blogs">
+  <h1>Blog</h1>
+  <ul>
+    {
+      posts.map((post, index) => {
+        return (
+          <li>
+            <a href={post.url}>
+              {index + 1} - {post.frontmatter.title}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Layout>

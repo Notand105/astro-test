@@ -1,5 +1,6 @@
 ---
-layout: ../../components/Layout.astro
+layout: ../../../components/Layout.astro
+title: Primer post
 ---
 
 

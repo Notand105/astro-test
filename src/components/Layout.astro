@@ -1,0 +1,27 @@
+---
+interface Props{
+    pagetitle? : string
+    pageDescription?: string
+}
+const { pagetitle, pageDescription = "descripcion default"} = Astro.props
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "description" content={pageDescription} />
+    <title>pagetitle | {pagetitle}</title>
+</head>
+<body
+   <!-- slot sirve para ser reemplazado posteriormente  -->
+   <slot /> 
+</body>
+</html>
+
+<style>
+   body{
+    background-color:black;
+    color:white;
+   } 
+</style>

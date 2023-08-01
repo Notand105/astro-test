@@ -1,34 +1,28 @@
 ---
-
-const actividades = ['programar', 'ver series', 'escchar musica']
-let isActive = true
-
-function toggleActive () {
-	isActive = !isActive
-}
+import Layout from "../components/Layout.astro";
+const actividades = ["programar", "ver series", "escchar musica"];
+let isActive = true;
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1 class={isActive ? "active" : ""} >Hola universo</h1>
+<Layout pagetitle="index page" pageDescription="Esta es la pagina inicial">
+  <h1 class={isActive ? "active" : ""}>Hola universo</h1>
 
-		{actividades.map((e, i)=>{
-			return <h2 > {e}</h2>
-		})}
-		<button >change</button>
-	</body>
-</html>
+  {
+    actividades.map((e, i) => {
+      return <h2> {e}</h2>;
+    })
+  }
+  <button>change</button>
+  <a href="/acercade">ir</a>
+  <a href='/blog/notas' >blog</a>
 
-<style>
-	.active{
-		color: orange;
+  <style>
+    .active {
+      color: orange;
+    }
+	a{
+		color:white;
 	}
-</style>
+  </style>
+</Layout>

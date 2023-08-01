@@ -1,0 +1,11 @@
+---
+interface Props{
+    titulo?:string,
+    content?:string
+}
+const {titulo ="default titulo", content =" default contenido"} = Astro.props 
+---
+<div>
+    <h1>{titulo}</h1>
+    <p>antium? {content}</p>
+</div>

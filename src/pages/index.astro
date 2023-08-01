@@ -1,28 +1,36 @@
 ---
 import Layout from "../components/Layout.astro";
+import ButtonSuscribe from "../components/ButtonSuscribe";
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 const actividades = ["programar", "ver series", "escchar musica"];
 let isActive = true;
-
 ---
 
 <Layout pagetitle="index page" pageDescription="Esta es la pagina inicial">
   <h1 class={isActive ? "active" : ""}>Hola universo</h1>
 
-  {
-    actividades.map((e, i) => {
-      return <h2> {e}</h2>;
-    })
-  }
+  <ButtonSuscribe client:load />
+  <div>
+    {
+      actividades.map((e, i) => {
+        return <h2> {e}</h2>;
+      })
+    }
+  </div>
+
   <button>change</button>
   <a href="/acercade">ir</a>
-  <a href='/blog/notas' >blog</a>
+  <a href="/blog/notas">blog</a>
+  <ToastContainer client:load />
 
   <style>
     .active {
       color: orange;
     }
-	a{
-		color:white;
-	}
+    a {
+      color: white;
+    }
   </style>
 </Layout>
